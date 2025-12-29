@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ Distance & Love</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top, #120012, #000);
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+    text-align:center;
+    padding:20px;
+}
+
+h1{
+    color:#ff4d6d;
+    font-size:2.4rem;
+}
+
+.subtitle{
+    margin-bottom:25px;
+    opacity:0.85;
+}
+
+.message-box{
+    background:rgba(255,255,255,0.07);
+    border-radius:22px;
+    padding:25px;
+    margin:30px auto;
+    max-width:520px;
+    box-shadow:0 0 25px rgba(255,0,100,0.3);
+    animation:fadeIn 1s ease;
+}
+
+#message{
+    font-size:1.05rem;
+    line-height:1.8;
+    color:#ffd6e0;
+}
+
+.floating{
+    position:fixed;
+    bottom:-30px;
+    animation:floatUp linear infinite;
+    opacity:0.85;
+}
+
+@keyframes floatUp{
+    from{transform:translateY(0) scale(1);opacity:1;}
+    to{transform:translateY(-120vh) scale(1.6);opacity:0;}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+footer{
+    margin-top:40px;
+    font-size:0.85rem;
+    opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ Even Distance Cries</h1>
+<p class="subtitle">But my love still hugs you 🤗</p>
+
+<div class="message-box">
+    <p id="message"></p>
+</div>
+
+<footer>
+Made with ❤️ for our LDR
+</footer>
+
+<script>
+// 100+ LOVE MESSAGES
+const messages = [
+"I miss you more than words can explain 😭",
+"Every night feels empty without you",
+"My heart searches for you in silence",
+"Distance hurts, but losing you would hurt more",
+"I wish I could hug you right now 🤗",
+"My tears know your name",
+"Loving you from afar is still loving you deeply",
+"Some nights I cry and smile at the same time",
+"My heart travels miles just to reach you ❤️",
+"Even screens can’t hide how much I miss you",
+"I fall asleep thinking of you",
+"Every heartbeat whispers your name",
+"I wish time could move faster to us",
+"My arms feel empty without you 🤗",
+"I cry because I love you so much 😭",
+"Distance tests us, love holds us",
+"You live in my thoughts every second",
+"I miss your voice the most",
+"One hug from you could heal everything",
+"My heart aches quietly",
+"I love you beyond distance ❤️",
+"Tears fall but love stays",
+"I count days till we meet",
+"You are my safest place",
+"My soul feels closer to you than anyone",
+"I miss you in ways words can’t say",
+"Distance makes love louder",
+"I carry you in my heart",
+"I wish you were here right now",
+"My love for you doesn’t sleep",
+"I cry when I miss you too much 😭",
+"You are my forever, even from far",
+"I hug my pillow and imagine you 🤗",
+"Distance can’t break real love",
+"My heart waits patiently",
+"I smile when I think of us",
+"Your name comforts me",
+"I wish I could hold your hand",
+"My tears are full of love",
+"I miss your warmth",
+"Loving you is my strength",
+"I dream of you every night",
+"Distance hurts but love heals",
+"I feel you even when you’re not here",
+"I wish I could wipe my tears on your shoulder",
+"My heart chose you forever",
+"You are worth every mile",
+"I love you endlessly ❤️",
+"I cry quietly missing you",
+"My heart hugs you every night 🤗",
+"Distance makes reunions sweeter",
+"You live in my soul",
+"I wish I could hear you say my name",
+"My love travels through time and space",
+"I miss your presence deeply",
+"Every tear is proof of love",
+"I feel incomplete without you",
+"You are my home",
+"My heart beats for you only",
+"I wait, because you are worth it",
+"I miss you more at night",
+"Distance made me stronger for you",
+"My heart whispers your name",
+"I send you hugs through this screen 🤗",
+"I cry because I care too much",
+"You are my reason to stay strong",
+"Love survives distance",
+"I imagine our future together",
+"My heart belongs to you",
+"I miss your smile",
+"Every second without you hurts",
+"My love never fades",
+"I hold on because of you",
+"You are my always",
+"I cry but I don’t give up 😭",
+"My heart longs for you",
+"I wish distance would disappear",
+"I love you more each day",
+"My soul waits for yours",
+"You are my forever person",
+"I miss you endlessly",
+"My love will find you",
+"I hug you in my thoughts 🤗",
+"Distance can’t stop my love",
+"My heart chooses you daily",
+"I cry because love is real",
+"You are my dream",
+"I’m counting days to us",
+"My love is patient",
+"You complete me ❤️"
+];
+
+let index = 0;
+const messageEl = document.getElementById("message");
+
+function changeMessage(){
+    messageEl.style.opacity = 0;
+    setTimeout(()=>{
+        messageEl.textContent = messages[index];
+        messageEl.style.opacity = 1;
+        index = (index + 1) % messages.length;
+    },400);
+}
+changeMessage();
+setInterval(changeMessage, 3500);
+
+// FLOATING EMOJIS
+const emojis = ["❤️","😭","🤗","🥺","💔"];
+
+function createEmoji(){
+    const e = document.createElement("div");
+    e.className = "floating";
+    e.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+    e.style.left = Math.random()*100 + "vw";
+    e.style.fontSize = (18 + Math.random()*26) + "px";
+    e.style.animationDuration = (4 + Math.random()*4) + "s";
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),8000);
+}
+setInterval(createEmoji, 250);
+</script>
+
+</body>
+</html>
